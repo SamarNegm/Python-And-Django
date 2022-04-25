@@ -1,0 +1,16 @@
+{% extends 'djApp/base.html' %}
+{% load static %}
+{% block title_block %}
+<h1>Add new student</h1>
+{% endblock %}
+
+{% block main_block %}
+
+<a class='btn btn-warning' href='{% url "home" %}'>Back to Home</a> <span>
+    <form method="POST"> {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Save</button>
+        <button type="reset" class="btn btn-danger">Clear</button>
+    </form>
+
+    {% endblock%}
